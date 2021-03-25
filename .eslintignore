@@ -1,0 +1,5 @@
+dist
+public
+config/*.js
+src/js_sdk
+src/assets
