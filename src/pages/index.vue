@@ -15,8 +15,38 @@
 				list: [
           {
             name: 'BaseRecorder',
-            description: '录音&播放组件',
+            description: '长按录音',
             path: '/pages/recorder/index',
+          },
+          {
+            name: 'BaseSelect',
+            // description: '录音&播放组件',
+            path: '/pages/select/index',
+          },
+          {
+            name: 'BaseTimePicker',
+            description: '时间选择',
+            path: '/pages/timePicker/index',
+          },
+          {
+            name: 'BaseDatePicker',
+            description: '日期选择',
+            path: '/pages/datePicker/index',
+          },
+          {
+            name: 'BaseHeader',
+            description: '自定义头部',
+            path: '/pages/header/index',
+          },
+          {
+            name: 'BaseFooter',
+            description: '底部按钮自适应',
+            path: '/pages/footer/index',
+          },
+          {
+            name: 'BaseStep',
+            description: '步骤条',
+            path: '/pages/step/index',
           }
 				]
 			}

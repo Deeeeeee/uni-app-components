@@ -11,6 +11,43 @@
 			"style": {
 				"navigationBarTitleText": "BaseRecorder"
 			}
+		},
+		{
+			"path": "pages/select/index",
+			"style": {
+				"navigationBarTitleText": "BaseSelect"
+			}
+		},
+		{
+			"path": "pages/timePicker/index",
+			"style": {
+				"navigationBarTitleText": "BaseTimePicker"
+			}
+		},
+		{
+			"path": "pages/datePicker/index",
+			"style": {
+				"navigationBarTitleText": "BaseDatePicker"
+			}
+		},
+		{
+			"path": "pages/header/index",
+			"style": {
+        "navigationStyle": "custom",
+				"navigationBarTitleText": "BaseHeader"
+			}
+		},
+		{
+			"path": "pages/footer/index",
+			"style": {
+				"navigationBarTitleText": "BaseFooter"
+			}
+		},
+		{
+			"path": "pages/step/index",
+			"style": {
+				"navigationBarTitleText": "BaseStep"
+			}
 		}
 	],
 	"globalStyle": {

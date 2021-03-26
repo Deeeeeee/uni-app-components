@@ -1,14 +1,16 @@
 <template>
-  <div class="base-select">
+  <div class="base-date-picker">
     <picker class="inner-picker"
-            :value="index"
-            :range="range"
+            mode="date"
+            :value="date"
+            :start="start"
+            :end="end"
+            :fields="fields"
             :disabled="disabled"
-            :range-key="rangeKey"
             :placeholder="placeholder"
             @change="onChange">
       <div class="inner-picker-text" :style="{'text-align': align}">
-        <div class="inner-picker-text-value" v-if="index !== ''">{{range[index].label}}</div>
+        <div class="inner-picker-text-value" v-if="date !== ''">{{date}}</div>
         <div class="inner-picker-text-placeholder" v-else>{{placeholder}}</div>
       </div>
     </picker>
@@ -16,6 +18,7 @@
 </template>
 
 <script>
+  import dayjs from 'dayjs'
   export default {
     name: 'BaseSelect',
     props: {
@@ -23,13 +26,17 @@
         type: [String, Number],
         default: ''
       },
-      range: {
-        type: Array,
-        required: true
-      },
-      rangeKey: {
+      start: {
         type: String,
-        default: 'label'
+        default: ''
+      },
+      end: {
+        type: String,
+        default: ''
+      },
+      fields: {
+        type: String,
+        default: 'day'
       },
       placeholder: {
         type: String,
@@ -46,17 +53,15 @@
     },
     data () {
       return {
-        index: ''
+        date: ''
       }
     },
     watch: {
       value: {
         handler(newVal) {
-          this.range.map((item, index) => {
-            if (newVal === item.value) {
-              this.index = index + ''
-            }
-          })
+          if(newVal){
+            this.date = dayjs(newVal).format('YYYY-MM-DD')
+          }
         },
         immediate: true
       }
@@ -67,18 +72,20 @@
     },
     methods: {
       onChange (e) {
-        // console.log(e.detail.value)
-        // let index = e.detail.value
-        this.index = parseInt(index)
-        this.$emit('change', this.range[index].value)
-        this.$emit('update:value', this.range[index].value)
+        console.log(e.detail.value)
+        let date = e.detail.value
+        let timestamp = dayjs(date).valueOf()
+        // console.log(timestamp)
+        this.date = date
+        this.$emit('change', timestamp)
+        this.$emit('update:value', timestamp)
       }
     }
   }
 </script>
 
 <style lang="scss">
-  .base-select {
+  .base-date-picker {
     .inner-picker {
       .inner-picker-text {
         line-height: 60rpx;
