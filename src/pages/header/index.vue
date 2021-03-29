@@ -1,9 +1,6 @@
 <template>
   <view class="page">
-<!--    <base-header></base-header>-->
-    <uni-nav-bar left-icon="home" title="导航栏组件1"></uni-nav-bar>
-    <uni-nav-bar left-icon="back" title="导航栏组件2"></uni-nav-bar>
-    <uni-nav-bar left-icon="back" title="导航栏组件3"></uni-nav-bar>
+    <base-header title="首页"></base-header>
 
     <div>
       1 <br>1 <br>1 <br>1 <br>1 <br>1 <br>1 <br>1 <br>1 <br>1 <br>1 <br>1 <br>1 <br>
