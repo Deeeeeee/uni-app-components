@@ -1,13 +1,15 @@
 <template>
   <view class="page">
-    <base-recorder></base-recorder>
+    <base-footer>
+      <button class="button" type="primary" size="large">确认</button>
+    </base-footer>
   </view>
 </template>
 <script>
-  import BaseRecorder from '@/components/BaseRecorder'
+  import BaseFooter from '@/components/BaseFooter'
 
   export default {
-    components: {BaseRecorder},
+    components: {BaseFooter},
     data () {
       return {
         title: 'Hello'
@@ -21,26 +23,7 @@
 </script>
 
 <style>
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .logo {
-    height: 200 rpx;
-    width: 200 rpx;
-    margin: 200 rpx auto 50 rpx auto;
-  }
-
-  .text-area {
-    display: flex;
-    justify-content: center;
-  }
-
-  .title {
-    font-size: 36 rpx;
-    color: #8f8f94;
-  }
+ .button{
+   width: 100%;
+ }
 </style>
